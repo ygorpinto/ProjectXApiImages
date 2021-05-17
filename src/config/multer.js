@@ -1,6 +1,5 @@
 import multer from 'multer'
 import path from 'path'
-import crypto from 'crypto'
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,7 +12,7 @@ const multerConfig = {
             cb(null,path.resolve(__dirname,'..','..','tmp','uploads'));
         },
         filename:(req,file,cb)=>{
-           const fileName = Date.now() + file.originalname
+           const fileName = file.originalname
             cb(null,fileName);
             
         },
